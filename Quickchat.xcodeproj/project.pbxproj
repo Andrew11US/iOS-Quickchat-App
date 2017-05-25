@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		904616CE1ED4B77E00F43BBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904616CD1ED4B77E00F43BBD /* AppDelegate.swift */; };
-		904616D01ED4B77E00F43BBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904616CF1ED4B77E00F43BBD /* ViewController.swift */; };
+		904616D01ED4B77E00F43BBD /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904616CF1ED4B77E00F43BBD /* CameraVC.swift */; };
 		904616D31ED4B77E00F43BBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904616D11ED4B77E00F43BBD /* Main.storyboard */; };
 		904616D51ED4B77E00F43BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 904616D41ED4B77E00F43BBD /* Assets.xcassets */; };
 		904616D81ED4B77E00F43BBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 904616D61ED4B77E00F43BBD /* LaunchScreen.storyboard */; };
+		904616E61ED4BAD500F43BBD /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904616E31ED4BAD500F43BBD /* CameraViewController.swift */; };
+		904616E71ED4BAD500F43BBD /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904616E41ED4BAD500F43BBD /* PhotoCaptureDelegate.swift */; };
+		904616E81ED4BAD500F43BBD /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904616E51ED4BAD500F43BBD /* PreviewView.swift */; };
+		90EA7B421ED74D0C009920DE /* DelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA7B411ED74D0C009920DE /* DelegateProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		904616CA1ED4B77E00F43BBD /* Quickchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quickchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		904616CD1ED4B77E00F43BBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		904616CF1ED4B77E00F43BBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		904616CF1ED4B77E00F43BBD /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		904616D21ED4B77E00F43BBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		904616D41ED4B77E00F43BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		904616D71ED4B77E00F43BBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		904616D91ED4B77E00F43BBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		904616E31ED4BAD500F43BBD /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		904616E41ED4BAD500F43BBD /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
+		904616E51ED4BAD500F43BBD /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		90EA7B411ED74D0C009920DE /* DelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,50 @@
 		904616CC1ED4B77E00F43BBD /* Quickchat */ = {
 			isa = PBXGroup;
 			children = (
-				904616CD1ED4B77E00F43BBD /* AppDelegate.swift */,
-				904616CF1ED4B77E00F43BBD /* ViewController.swift */,
-				904616D11ED4B77E00F43BBD /* Main.storyboard */,
+				904616DF1ED4BA6E00F43BBD /* UI */,
+				904616E01ED4BA7600F43BBD /* Controllers */,
+				904616E11ED4BA8000F43BBD /* Model */,
+				904616E21ED4BA8800F43BBD /* Services */,
 				904616D41ED4B77E00F43BBD /* Assets.xcassets */,
-				904616D61ED4B77E00F43BBD /* LaunchScreen.storyboard */,
-				904616D91ED4B77E00F43BBD /* Info.plist */,
 			);
 			path = Quickchat;
+			sourceTree = "<group>";
+		};
+		904616DF1ED4BA6E00F43BBD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				904616D11ED4B77E00F43BBD /* Main.storyboard */,
+				904616D61ED4B77E00F43BBD /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		904616E01ED4BA7600F43BBD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				904616CF1ED4B77E00F43BBD /* CameraVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		904616E11ED4BA8000F43BBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				904616E51ED4BAD500F43BBD /* PreviewView.swift */,
+				904616E31ED4BAD500F43BBD /* CameraViewController.swift */,
+				904616E41ED4BAD500F43BBD /* PhotoCaptureDelegate.swift */,
+				90EA7B411ED74D0C009920DE /* DelegateProtocol.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		904616E21ED4BA8800F43BBD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				904616CD1ED4B77E00F43BBD /* AppDelegate.swift */,
+				904616D91ED4B77E00F43BBD /* Info.plist */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				904616D01ED4B77E00F43BBD /* ViewController.swift in Sources */,
+				90EA7B421ED74D0C009920DE /* DelegateProtocol.swift in Sources */,
+				904616E81ED4BAD500F43BBD /* PreviewView.swift in Sources */,
+				904616D01ED4B77E00F43BBD /* CameraVC.swift in Sources */,
 				904616CE1ED4B77E00F43BBD /* AppDelegate.swift in Sources */,
+				904616E71ED4BAD500F43BBD /* PhotoCaptureDelegate.swift in Sources */,
+				904616E61ED4BAD500F43BBD /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +350,7 @@
 				904616DE1ED4B77E00F43BBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
