@@ -27,7 +27,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMy-MW-FxK">
-                                <rect key="frame" x="162" y="597" width="50" height="50"/>
+                                <rect key="frame" x="162.5" y="597" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.98666840789999999" green="0.33246505259999998" blue="0.22883489730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="NpR-JG-Nr3"/>
@@ -62,11 +62,14 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gep-Dj-V2F">
-                                <rect key="frame" x="127" y="319" width="121" height="29"/>
+                                <rect key="frame" x="127" y="319.5" width="121" height="29"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="toggleCaptureMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="SMW-4L-N3H"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeJ-y8-xqN">
                                 <rect key="frame" x="36" y="516" width="42" height="21"/>
@@ -112,10 +115,132 @@
                         <outlet property="previewView" destination="GbS-BJ-a05" id="m1K-dH-evt"/>
                         <outlet property="recordButton" destination="MMy-MW-FxK" id="Qdb-IA-1gk"/>
                         <outlet property="resumeButton" destination="nWi-wG-oAp" id="e7e-cO-IGh"/>
+                        <segue destination="idF-xb-LKr" kind="presentation" identifier="loginVC" id="O49-ny-c7Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Log InVC-->
+        <scene sceneID="Qrd-3y-tsp">
+            <objects>
+                <viewController id="idF-xb-LKr" customClass="LogInVC" customModule="Quickchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vyS-fa-IYX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZaF-3b-pOh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RdF-fp-3su">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sunrise" translatesAutoresizingMaskIntoConstraints="NO" id="HMZ-5Z-ivS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pq-yw-Bv6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.43012334928914098" green="0.90087642766497467" blue="0.41733962299018823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LRb-Ua-h4V">
+                                <rect key="frame" x="62.5" y="248.5" width="250" height="170"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="viS-xL-VCj" customClass="RoundTextField" customModule="Quickchat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="QF7-ww-QqP"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rS9-Gj-Z77" customClass="RoundTextField" customModule="Quickchat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="250" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="fgM-Vp-gRJ"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfz-cz-T1v" customClass="RoundedButton" customModule="Quickchat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="250" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="1Br-sT-Q6F"/>
+                                        </constraints>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="0.43012334930000001" green="0.90087642769999998" blue="0.41733962299999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginBtnTapped:" destination="idF-xb-LKr" eventType="touchUpInside" id="aue-Gr-EwN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="f7H-ZJ-5r0"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7pq-yw-Bv6" firstAttribute="height" secondItem="HMZ-5Z-ivS" secondAttribute="height" id="8m3-aK-Edr"/>
+                            <constraint firstItem="HMZ-5Z-ivS" firstAttribute="width" secondItem="RdF-fp-3su" secondAttribute="width" id="8wS-WA-M7X"/>
+                            <constraint firstItem="HMZ-5Z-ivS" firstAttribute="centerY" secondItem="RdF-fp-3su" secondAttribute="centerY" id="bFn-Cx-0KE"/>
+                            <constraint firstItem="LRb-Ua-h4V" firstAttribute="centerY" secondItem="RdF-fp-3su" secondAttribute="centerY" id="cdW-nK-1Ts"/>
+                            <constraint firstItem="7pq-yw-Bv6" firstAttribute="width" secondItem="HMZ-5Z-ivS" secondAttribute="width" id="d8q-ns-5OL"/>
+                            <constraint firstItem="HMZ-5Z-ivS" firstAttribute="height" secondItem="RdF-fp-3su" secondAttribute="height" id="hvt-C8-YMm"/>
+                            <constraint firstItem="7pq-yw-Bv6" firstAttribute="centerY" secondItem="HMZ-5Z-ivS" secondAttribute="centerY" id="jk8-9g-eGL"/>
+                            <constraint firstItem="7pq-yw-Bv6" firstAttribute="centerX" secondItem="HMZ-5Z-ivS" secondAttribute="centerX" id="oxA-cX-sW9"/>
+                            <constraint firstItem="HMZ-5Z-ivS" firstAttribute="centerX" secondItem="RdF-fp-3su" secondAttribute="centerX" id="qEe-SG-Ags"/>
+                            <constraint firstItem="LRb-Ua-h4V" firstAttribute="centerX" secondItem="RdF-fp-3su" secondAttribute="centerX" id="qiM-63-GIk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="viS-xL-VCj" id="ee1-dc-iaE"/>
+                        <outlet property="loginBtn" destination="Yfz-cz-T1v" id="GFu-PL-ho0"/>
+                        <outlet property="passwordTextField" destination="rS9-Gj-Z77" id="egb-j3-UoX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8VO-ne-dBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="66"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Sunrise" width="1920" height="1280"/>
+    </resources>
 </document>
