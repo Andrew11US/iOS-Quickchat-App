@@ -12,7 +12,7 @@ import Firebase
 
 class CameraVC: CameraViewController {
     @IBOutlet weak var previewView: PreviewView!
-
+    
     override func viewDidLoad() {
         
         _previewView = previewView
@@ -28,6 +28,7 @@ class CameraVC: CameraViewController {
             performSegue(withIdentifier: "loginVC", sender: nil)
             return
         }
+        
     }
 
     @IBAction func recordBtnPressed(_ sender: Any) {
@@ -36,6 +37,26 @@ class CameraVC: CameraViewController {
 
     @IBAction func changeCameraBtnPressed(_ sender: Any) {
         changeCamera()
+    }
+    
+//    func videoRecordingComplete(_ videoURL: URL) {
+//        performSegue(withIdentifier: "UsersVC", sender: ["videoURL": videoURL])
+//    }
+    
+//    func snapshotTaken(_ snapshotData: Data) {
+//        performSegue(withIdentifier: "UsersVC", sender: ["snapshotData": snapshotData])
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let usersVC = segue.destination as? UsersVC {
+            if let videoDict = sender as? Dictionary<String, URL> {
+                let url = videoDict["videoURL"]
+                usersVC.videoURL = url
+            } else if let snapDict = sender as? Dictionary<String, Data> {
+                let snapData = snapDict["snapshotData"]
+                usersVC.snapData = snapData
+            }
+        }
     }
 
 }

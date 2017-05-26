@@ -22,7 +22,6 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
     @IBOutlet private weak var photoButton: UIButton!
 //    @IBOutlet private weak var livePhotoModeButton: UIButton!
     
-    
     override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -727,7 +726,13 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 		}
 		
 		if success {
+            
+            videoRecordingComplete(outputFileURL)
+            
 			// Check authorization status.
+            
+            // when video recording is done and there is no error -> put the file into photo library
+            /*
 			PHPhotoLibrary.requestAuthorization { status in
 				if status == .authorized {
 					// Save the movie file to the photo library and cleanup.
@@ -748,6 +753,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 					cleanup()
 				}
 			}
+            */
 		}
 		else {
 			cleanup()
@@ -762,6 +768,10 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 			self.recordButton.setTitle(NSLocalizedString("Record", comment: "Recording button record title"), for: [])
 		}
 	}
+    
+    func videoRecordingComplete(_ videoURL: URL) {
+        performSegue(withIdentifier: "UsersVC", sender: ["videoURL": videoURL])
+    }
 	
 	// MARK: KVO and Notifications
 	

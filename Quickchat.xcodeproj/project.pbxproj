@@ -19,6 +19,11 @@
 		90710DF51ED816F800381EAB /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90710DF31ED816F800381EAB /* RoundTextField.swift */; };
 		90710DF71ED819BA00381EAB /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90710DF61ED819BA00381EAB /* LogInVC.swift */; };
 		90710DF91ED834B700381EAB /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90710DF81ED834B600381EAB /* AuthService.swift */; };
+		90710DFB1ED83FC100381EAB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90710DFA1ED83FC100381EAB /* DataService.swift */; };
+		90710DFD1ED8400900381EAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90710DFC1ED8400900381EAB /* User.swift */; };
+		90710DFF1ED842BA00381EAB /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90710DFE1ED842BA00381EAB /* UsersVC.swift */; };
+		90710E011ED847C600381EAB /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90710E001ED847C600381EAB /* UserCell.swift */; };
+		9090B47A1ED89AA7009A39B7 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090B4791ED89AA7009A39B7 /* GlobalData.swift */; };
 		90EA7B421ED74D0C009920DE /* DelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA7B411ED74D0C009920DE /* DelegateProtocol.swift */; };
 		90EA7B441ED75973009920DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90EA7B431ED75973009920DE /* GoogleService-Info.plist */; };
 		D3AB032C192AFF34B8BC5E8D /* Pods_Quickchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6651A2E4C9784D8CFBA8A1 /* Pods_Quickchat.framework */; };
@@ -41,6 +46,11 @@
 		90710DF31ED816F800381EAB /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		90710DF61ED819BA00381EAB /* LogInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		90710DF81ED834B600381EAB /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		90710DFA1ED83FC100381EAB /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		90710DFC1ED8400900381EAB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		90710DFE1ED842BA00381EAB /* UsersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
+		90710E001ED847C600381EAB /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		9090B4791ED89AA7009A39B7 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		90EA7B411ED74D0C009920DE /* DelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProtocol.swift; sourceTree = "<group>"; };
 		90EA7B431ED75973009920DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9378A93E81722A2D50DEE8B /* Pods-Quickchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quickchat/Pods-Quickchat.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +105,7 @@
 				904616D61ED4B77E00F43BBD /* LaunchScreen.storyboard */,
 				90710DF21ED816F800381EAB /* RoundedButton.swift */,
 				90710DF31ED816F800381EAB /* RoundTextField.swift */,
+				90710E001ED847C600381EAB /* UserCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -104,6 +115,7 @@
 			children = (
 				904616CF1ED4B77E00F43BBD /* CameraVC.swift */,
 				90710DF61ED819BA00381EAB /* LogInVC.swift */,
+				90710DFE1ED842BA00381EAB /* UsersVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -115,7 +127,10 @@
 				904616E31ED4BAD500F43BBD /* CameraViewController.swift */,
 				904616E41ED4BAD500F43BBD /* PhotoCaptureDelegate.swift */,
 				90710DF81ED834B600381EAB /* AuthService.swift */,
+				90710DFA1ED83FC100381EAB /* DataService.swift */,
+				90710DFC1ED8400900381EAB /* User.swift */,
 				90EA7B411ED74D0C009920DE /* DelegateProtocol.swift */,
+				9090B4791ED89AA7009A39B7 /* GlobalData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -277,8 +292,13 @@
 				904616E81ED4BAD500F43BBD /* PreviewView.swift in Sources */,
 				904616D01ED4B77E00F43BBD /* CameraVC.swift in Sources */,
 				904616CE1ED4B77E00F43BBD /* AppDelegate.swift in Sources */,
+				90710DFB1ED83FC100381EAB /* DataService.swift in Sources */,
+				9090B47A1ED89AA7009A39B7 /* GlobalData.swift in Sources */,
+				90710E011ED847C600381EAB /* UserCell.swift in Sources */,
 				90710DF41ED816F800381EAB /* RoundedButton.swift in Sources */,
 				904616E71ED4BAD500F43BBD /* PhotoCaptureDelegate.swift in Sources */,
+				90710DFD1ED8400900381EAB /* User.swift in Sources */,
+				90710DFF1ED842BA00381EAB /* UsersVC.swift in Sources */,
 				90710DF91ED834B700381EAB /* AuthService.swift in Sources */,
 				904616E61ED4BAD500F43BBD /* CameraViewController.swift in Sources */,
 				90710DF71ED819BA00381EAB /* LogInVC.swift in Sources */,
