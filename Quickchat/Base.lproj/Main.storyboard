@@ -24,7 +24,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbS-BJ-a05" customClass="PreviewView" customModule="Quickchat" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="K4k-lk-zGJ" appends="YES" id="Jls-wm-40P"/>
@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="width" constant="50" id="pcE-aC-K1H"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Rec">
+                                <state key="normal" title="R">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -57,71 +57,32 @@
                                     <action selector="changeCameraBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OxE-Rr-Q92"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWi-wG-oAp">
-                                <rect key="frame" x="36" y="547" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezz-zQ-v2s">
-                                <rect key="frame" x="293" y="547" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="capturePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yjw-1E-RHy"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gep-Dj-V2F">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gep-Dj-V2F">
                                 <rect key="frame" x="127" y="319.5" width="121" height="29"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
-                                <connections>
-                                    <action selector="toggleCaptureMode:" destination="BYZ-38-t0r" eventType="valueChanged" id="SMW-4L-N3H"/>
-                                </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeJ-y8-xqN">
-                                <rect key="frame" x="36" y="516" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9F-ub-VhO">
-                                <rect key="frame" x="297" y="516" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MMy-MW-FxK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6fY-hr-8NI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MMy-MW-FxK" secondAttribute="bottom" constant="20" id="9B9-yj-Pt9"/>
-                            <constraint firstItem="MMy-MW-FxK" firstAttribute="top" secondItem="x9F-ub-VhO" secondAttribute="bottom" constant="60" id="9sv-Ep-8El"/>
-                            <constraint firstItem="MMy-MW-FxK" firstAttribute="top" secondItem="SeJ-y8-xqN" secondAttribute="bottom" constant="60" id="B3x-k3-JJd"/>
                             <constraint firstItem="GbS-BJ-a05" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ZA6-Ub-x9T"/>
-                            <constraint firstItem="MMy-MW-FxK" firstAttribute="top" secondItem="nWi-wG-oAp" secondAttribute="bottom" constant="20" id="aBZ-aW-BaH"/>
                             <constraint firstItem="gep-Dj-V2F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cc2-3l-icB"/>
                             <constraint firstItem="gep-Dj-V2F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ceF-qx-HPv"/>
-                            <constraint firstItem="MMy-MW-FxK" firstAttribute="top" secondItem="Ezz-zQ-v2s" secondAttribute="bottom" constant="20" id="hGL-8Y-rSl"/>
-                            <constraint firstItem="nWi-wG-oAp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="hRx-YN-d2x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ezz-zQ-v2s" secondAttribute="trailing" constant="20" id="jLM-On-K5c"/>
-                            <constraint firstItem="SeJ-y8-xqN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="jVk-y3-Ib3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rEf-of-XGi" secondAttribute="trailing" constant="20" id="jeo-Wj-paj"/>
                             <constraint firstItem="GbS-BJ-a05" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="m2V-bV-arC"/>
                             <constraint firstItem="GbS-BJ-a05" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n0o-3o-7Ye"/>
                             <constraint firstItem="GbS-BJ-a05" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v8m-MQ-Jpz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="x9F-ub-VhO" secondAttribute="trailing" constant="20" id="vYM-u6-m1w"/>
                             <constraint firstItem="rEf-of-XGi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="wBA-lh-nRF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="rEf-of-XGi" id="Z39-vT-LE8"/>
-                        <outlet property="cameraUnavailableLabel" destination="x9F-ub-VhO" id="aQU-To-V1m"/>
-                        <outlet property="captureModeControl" destination="gep-Dj-V2F" id="jce-Qq-jOZ"/>
-                        <outlet property="capturingLivePhotoLabel" destination="SeJ-y8-xqN" id="3jc-pb-VUY"/>
-                        <outlet property="photoButton" destination="Ezz-zQ-v2s" id="jCR-3j-IDS"/>
                         <outlet property="previewView" destination="GbS-BJ-a05" id="m1K-dH-evt"/>
                         <outlet property="recordButton" destination="MMy-MW-FxK" id="Qdb-IA-1gk"/>
-                        <outlet property="resumeButton" destination="nWi-wG-oAp" id="e7e-cO-IGh"/>
                         <segue destination="idF-xb-LKr" kind="presentation" identifier="loginVC" id="O49-ny-c7Q"/>
                         <segue destination="cE6-ks-GOT" kind="show" identifier="UsersVC" id="jc6-lR-87h"/>
                     </connections>
@@ -251,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8VO-ne-dBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="38"/>
+            <point key="canvasLocation" x="927" y="66"/>
         </scene>
         <!--UsersVC-->
         <scene sceneID="QQD-Qa-43q">
@@ -342,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjc-xO-OyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="-773"/>
+            <point key="canvasLocation" x="926" y="-650"/>
         </scene>
     </scenes>
     <resources>
