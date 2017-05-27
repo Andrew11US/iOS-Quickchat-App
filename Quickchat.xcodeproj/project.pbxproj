@@ -24,6 +24,7 @@
 		90710DFF1ED842BA00381EAB /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90710DFE1ED842BA00381EAB /* UsersVC.swift */; };
 		90710E011ED847C600381EAB /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90710E001ED847C600381EAB /* UserCell.swift */; };
 		9090B47A1ED89AA7009A39B7 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9090B4791ED89AA7009A39B7 /* GlobalData.swift */; };
+		90D147571ED9CDF800476ABE /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D147561ED9CDF800476ABE /* CustomButton.swift */; };
 		90EA7B421ED74D0C009920DE /* DelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA7B411ED74D0C009920DE /* DelegateProtocol.swift */; };
 		90EA7B441ED75973009920DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90EA7B431ED75973009920DE /* GoogleService-Info.plist */; };
 		D3AB032C192AFF34B8BC5E8D /* Pods_Quickchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E6651A2E4C9784D8CFBA8A1 /* Pods_Quickchat.framework */; };
@@ -51,6 +52,8 @@
 		90710DFE1ED842BA00381EAB /* UsersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		90710E001ED847C600381EAB /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		9090B4791ED89AA7009A39B7 /* GlobalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
+		90D147521ED9CDCF00476ABE /* Quickchat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Quickchat-Bridging-Header.h"; sourceTree = "<group>"; };
+		90D147561ED9CDF800476ABE /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		90EA7B411ED74D0C009920DE /* DelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProtocol.swift; sourceTree = "<group>"; };
 		90EA7B431ED75973009920DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9378A93E81722A2D50DEE8B /* Pods-Quickchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quickchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quickchat/Pods-Quickchat.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 				904616D11ED4B77E00F43BBD /* Main.storyboard */,
 				904616D61ED4B77E00F43BBD /* LaunchScreen.storyboard */,
 				90710DF21ED816F800381EAB /* RoundedButton.swift */,
+				90D147561ED9CDF800476ABE /* CustomButton.swift */,
 				90710DF31ED816F800381EAB /* RoundTextField.swift */,
 				90710E001ED847C600381EAB /* UserCell.swift */,
 			);
@@ -141,6 +145,7 @@
 				904616CD1ED4B77E00F43BBD /* AppDelegate.swift */,
 				90EA7B431ED75973009920DE /* GoogleService-Info.plist */,
 				904616D91ED4B77E00F43BBD /* Info.plist */,
+				90D147521ED9CDCF00476ABE /* Quickchat-Bridging-Header.h */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 					904616C91ED4B77E00F43BBD = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = PTRW36GG78;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -291,6 +297,7 @@
 				90EA7B421ED74D0C009920DE /* DelegateProtocol.swift in Sources */,
 				904616E81ED4BAD500F43BBD /* PreviewView.swift in Sources */,
 				904616D01ED4B77E00F43BBD /* CameraVC.swift in Sources */,
+				90D147571ED9CDF800476ABE /* CustomButton.swift in Sources */,
 				904616CE1ED4B77E00F43BBD /* AppDelegate.swift in Sources */,
 				90710DFB1ED83FC100381EAB /* DataService.swift in Sources */,
 				9090B47A1ED89AA7009A39B7 /* GlobalData.swift in Sources */,
@@ -425,6 +432,7 @@
 			baseConfigurationReference = 39A6584F37CB729F0C44850F /* Pods-Quickchat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -444,6 +452,8 @@
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.losAngelesBoy.Quickchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quickchat/Quickchat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -453,6 +463,7 @@
 			baseConfigurationReference = A9378A93E81722A2D50DEE8B /* Pods-Quickchat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = PTRW36GG78;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -472,6 +483,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.losAngelesBoy.Quickchat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Quickchat/Quickchat-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

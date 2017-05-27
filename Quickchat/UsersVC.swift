@@ -124,6 +124,7 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     let downloadURL = meta!.downloadURL()
                     DataService.instance.sendMediaPullRequest(senderUID: FIRAuth.auth()!.currentUser!.uid, sendingTo: self.selectedUsers, mediaURL: downloadURL!, textSnippet: "Coding today was LEGIT!")
                     print("Download URL: \(String(describing: downloadURL))")
+//                    self.presentAlert()
                     //save this somewhere
                     
                 }
@@ -145,5 +146,11 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+//    func presentAlert() {
+//        let alert = UIAlertController(title: "Done", message: "Snap Sent!", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
+//    }
 
 }
