@@ -42,8 +42,10 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         tableView.delegate = self
-        tableView.delegate = self
+        tableView.dataSource = self
         tableView.allowsMultipleSelection = true
+        
+        navigationItem.rightBarButtonItem?.isEnabled = false
 
         DataService.instance.usersRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             
@@ -67,18 +69,18 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        tableView.reloadData()
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as! UserCell
-        let user = users[indexPath.row]
-        cell.updateUI(user: user)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell {
+            let user = users[indexPath.row]
+            print("U:", user)
+            cell.updateUI(user: user)
+            return cell
+        } else {
+            print("NO DATA")
+            return UserCell()
+        }
+        
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -135,7 +137,7 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 if err != nil {
                     print("Error uploading snapshot: \(String(describing: err?.localizedDescription))")
                 } else {
-                    let downloadURL = meta!.downloadURL()
+                    _ = meta!.downloadURL()
                     self.dismiss(animated: true, completion: nil)
                 }
             })
